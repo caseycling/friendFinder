@@ -6,9 +6,9 @@ app.get("/api/friends", function (req, res) {
     return res.json(potentialFriends);
 });
 
-// // Displays all wait list customers in JSON format 
-// app.post("/api/waitlist", function (req, res) {
-//     return res.json(waitlist);
-// });
+// POST request to receive data from client and push to potentialFriends array
+app.post("/api/waitlist", function (req, res) {
+    return potentialFriends.push(req.body);
+});
 
 
