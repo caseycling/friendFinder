@@ -26,19 +26,18 @@
             <h1 class="display-4">Friend Finder</h1>
             <h3 class="lead">Answer a few basic questions</h3>
             <h3 class="lead">Then find a friend with the greatest compatability</h3>
-            <a class="btn btn-primary btn-lg" id="surveyBtn" role="button">Go to survey</a>
+            <a class="btn btn-primary btn-lg" id="surveyBtn" role="button" href="/survey">Go to survey</a>
         </div>
     </div>
 </body>
 
+<script>
+    $("#surveryBtn").on("click", function () {
+        $.get("/survey", function (req, res) {
+            res.sendFile(path.join(__dirname, "../public/survey.html"))
+        })
+    })
+</script>
 <!-- Script tags to reference relevant javascript files-->
-
-
-
-
-<script src="../../server.js"></script>
-<script src="../data/friends.js"></script>
-<script src="../routing/htmlRoutes.js"></script>
-<script src="../routing/apiRoutes.js"></script>
 
 </html>
