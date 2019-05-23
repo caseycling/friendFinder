@@ -20,14 +20,17 @@ var app = express()
 //Save port to variable
 var port = 8000
 
+//Use middleware to parse data passed to array from survey
+app.use(express.urlencoded({extended: true}))
+app.use(express.json())
+
+//Serve static files. Needed for html files to register
+app.use(express.static('app/public'));
+
 //Use api routes
 app.use('/api', api)
 //Use html routes
 app.use('/', html)
-
-//Use middleware to parse data passed to array from survey
-app.use(express.urlencoded({extended: true}))
-app.use(express.json())
 
 //Start the server up with the listen function
 app.listen(port, function() {

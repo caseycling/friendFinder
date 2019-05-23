@@ -1,24 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-<!-- Create basic bootstrap grid for design layout -->
+    <!-- Create basic bootstrap grid for design layout -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <h1>Friend Finder</h1>
-    <h3>Answer a few basic questions</h3>
-    <h3>Then fin the friend with the greatest compatability</h3>
-    <button id="survery">Go to survey</button>
-    <br>
-    <a>API Friends List</a> <a>GitHub Repo</a>
-<!-- Add hyperlink which route to survey.html -->
-<!-- On click event will call get function to change url to /survey, switching to the questionaire -->
+    <div class="jumbotron">
+        <h1 class="display-4">Friend Finder</h1>
+        <h3 class="lead">Answer a few basic questions</h3>
+        <h3 class="lead">Then find a friend with the greatest compatability</h3>
+        <a class="btn btn-primary btn-lg" id="surveyBtn" role="button">Go to survey</a>
+    </div>
 </body>
+
 <!-- Script tags to reference relevant javascript files-->
-<script src="/server.js"></script>
-<script src="/app/routing/htmlRoutes.js"></script>
-<script src="/app/routing/apiRoutes.js"></script>
+
+
+
+
+<script src="../../server.js"></script>
+<script src="../data/friends.js"></script>
+<script src="../routing/htmlRoutes.js"></script>
+<script src="../routing/apiRoutes.js"></script>
+
 </html>
