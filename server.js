@@ -10,10 +10,20 @@
 var express = require("express")
 //Require path
 var path = require("path")
+//Load api routes
+var api = require('./app/routing/apiRoutes')
+//Load html routes
+var html = require('./app/routing/htmlRoutes')
 //Set up express app
 var app = express()
+
 //Save port to variable
 var port = 8000
+
+//Use api routes
+app.use('/api', api)
+//Use html routes
+app.use('/', html)
 
 //Use middleware to parse data passed to array from survey
 app.use(express.urlencoded({extended: true}))
@@ -23,4 +33,3 @@ app.use(express.json())
 app.listen(port, function() {
     console.log("App listening on port: " + port)
 });
-
