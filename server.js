@@ -18,7 +18,7 @@ var html = require('./app/routing/htmlRoutes')
 var app = express()
 
 //Save port to variable
-var port = process.env.Port || 8000
+var port = process.env.PORT || 8000
 
 //Use middleware to parse data passed to array from survey
 app.use(express.urlencoded({extended: true}))
