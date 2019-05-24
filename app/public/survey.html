@@ -187,15 +187,18 @@
     //Click handler on submit button to read information
     $("#submitBtn").on("click", function () {
         event.preventDefault();
-        console.log("gotcha")
-        console.log($("#nameInput").val().trim())
 
+        //Alert the user if they have left the name, photo field or one of the questions blank
         if ($("#nameInput").val().trim() === "") {
             alert("Please enter in your name")
         } else if ($("#photoInput").val().trim() === "") {
             alert("Please enter a link to a photo")
+        } else if ($("#qst1") === "" ||$("#qst2") === "" || $("#qst3") === "" || $("#qst4") === "" || $("#qst5") === "" || $("#qst6") === "" || $("#qst7") === "" || $("#qst8") === "" || $("#qst9") === "" || $("#qst10") === "") {
+            alert("Please fill out all the questions")
         }
     })
+
+      
 
 </script>
 
