@@ -188,15 +188,39 @@
     $("#submitBtn").on("click", function () {
         event.preventDefault();
 
+        //Create variable 'valid' to check if form has been filled out with boolean value
+        var valid = true;
         //Alert the user if they have left the name, photo field or one of the questions blank
+        //Change 'valid' to false
         if ($("#nameInput").val().trim() === "") {
+            valid = false;
             alert("Please enter in your name")
         } else if ($("#photoInput").val().trim() === "") {
+            valid = false;
             alert("Please enter a link to a photo")
         } else if ($("#qst1") === "" ||$("#qst2") === "" || $("#qst3") === "" || $("#qst4") === "" || $("#qst5") === "" || $("#qst6") === "" || $("#qst7") === "" || $("#qst8") === "" || $("#qst9") === "" || $("#qst10") === "") {
+            valid = false;
             alert("Please fill out all the questions")
         }
-    })
+
+        //If all fields have been filled out, save the user's input values
+        if(valid = true) {
+            var newUser = {
+                name: $("#nameInput").val().trim(),
+                photo: $("#photoInput").val().trim(),
+                points: pointsArr
+                }
+            //create 'pointsArr' array to push question input values to
+            var pointsArr = []
+            //Loop through all question input values
+            for(i=1; i<11; i++) {
+                pointsArr.push($("#qst" + i).val())
+            }
+            }
+            console.log(pointsArr)
+            console.log(newUser)
+        })
+
 
       
 
